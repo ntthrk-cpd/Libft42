@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/17 07:57:31 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/19 03:38:40 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/02/19 12:37:18 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/02/19 14:18:59 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,17 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	str_len;
+	size_t	count;
 
 	str_len = ft_strlen(src);
+	count = 0;
 	if (size == 0)
 		return (str_len);
-	while (!*src || !--size )
+	while (src[count] != '\0' || count < (size - 1))
 	{
-		*dst++ = *src++;
+		dst[count] = src[count];
+		count++;
 	}
-	*--dst = '\0';
+	dst[count] = '\0'; 
 	return (str_len);
-}
-
-int main()
-{
-	int size_n = (int)ft_strlcpy("hell hell hello!!!!!!", "HELLOWEEN XOXOXO", 5);
-	printf("----> %d\n", size_n);
-	printf("\nlllll");
-	return (0);
 }
