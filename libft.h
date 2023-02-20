@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:37:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/19 14:40:21 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/02/20 17:07:10 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 # include <stdio.h>
+# include <stdlib.h>
 
 int		ft_isalnum(int ch);
 int		ft_isalpha(int ch);
@@ -34,5 +35,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 int		ft_atoi(const char *nptr);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_calloc(size_t count, size_t size);
+char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start,size_t len);
 
 #endif
