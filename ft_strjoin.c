@@ -6,29 +6,27 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 20:21:18 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/20 21:10:15 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/02/21 10:17:39 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str_join;
-	unsigned int	sum_len;
-	unsigned int	len_s2;
+	unsigned char	*str_join;
+	size_t			len_s1;
+	size_t			len_s2;
 
-	s1_len = ft_strlen(s1);
-	sum_len = sum_len + ft_strlen(s2);
-	sub_str = (char *)malloc(sum_len);
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	str_join = (char *)malloc(len_s1 + len_s2);
 	if (!*str_join)
 	{
-		while (s1_len < (sum_len)
-			&& s2[s1_len] != '\0')
-		{
-			str_join[s1_len] = s[count + start];
-			str_join++;
-		}
-		sub_str[count] = '\0';
-		return ((char *)sub_str);
+		ft_memcpy((void *)str_join, (void *)s1, len_s1);
+		ft_memcpy((void *)str_join + len_s1, (void *)s2, len_s2);
+		str_join[len_s1 + len_s2] = '\0';
+		return (str_join);
 	}
 	return (NULL);
 }
