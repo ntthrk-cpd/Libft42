@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:05:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/20 20:19:59 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:07:14 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	unsigned int	count;
 	char	*sub_str;
-	unsigned int		count;
 
 	count = 0;
 	sub_str = (char *)malloc(len);

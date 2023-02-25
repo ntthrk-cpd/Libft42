@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 12:37:18 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/19 14:18:59 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/02/25 20:08:38 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		dst[count] = src[count];
 		count++;
 	}
-	dst[count] = '\0'; 
+	dst[count] = '\0';
 	return (str_len);
 }
