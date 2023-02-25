@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:37:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/24 23:02:53 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/02/25 13:16:31 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char    *ft_itoa(int n);
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
