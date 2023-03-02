@@ -5,80 +5,84 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/22 23:55:11 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/01 20:10:05 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/03/03 03:47:11 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*ft_set_position(char *s,char c)
+void	ft_free(char **str_list)
 {
-	int	*pos;
-	int	count;
+	int	i;
 
-	pos = 0;
-	count = 0;
-	while(s[count] == c)
-		count++;
-	pos[0] = count;
-	while(s[count] != c)
-		count++;
-	pos[1] = count;
-	return (pos);
-}
-
-char	**ft_getlist(char **list_str, char *s, char c, int index)
-{
-	int		*pos;	
-	
-	list_str[index] = malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (list_str[index] && index == 0)
-		return (NULL);
-	pos = ft_set_position(s, c);
-	if(pos[0] != pos[1])
+	i = 0;
+	while (str_list[i] != NULL)
 	{
-		list_str[index] = ft_substr(s, pos[0], pos[1]);
-		s = s + pos[1];
-		ft_getlist(list_str, (char *)s, c, index + 1);
+		free(str_list[i]);
+		i++;
 	}
-	return (list_str);
+	free(str_list);
 }
 
-char	**ft_allfree(char **s)
+int	ft_countword(char *s, char c)
 {
-	size_t	count;
+	int	count;
+	int	boolean;
 
 	count = 0;
-	/*while (s[count] != 0)
+	while (*s != '\0')
 	{
-		s[count++] = free(s[count]);
-	}*/
-	free(s);
-	return (NULL);
+		if (*s != c && boolean == 0)
+		{
+			count++;
+			boolean = 1;
+		}
+		else if (*s == c)
+			boolean = 0;
+		*s++;
+	}
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char **list_str;
-	char len_s;
+	char	**str_list;
+	int		count;
+	int		start;
+	int		index;
 
-	len_s = ft_strlen(s);
-	list_str = (char **)malloc(sizeof(char *) * len_s);
-	if (!list_str)
+	count = 0;
+	start = 0;
+	index = 0;
+	str_list = (char **)malloc(sizeof(char) * (ft_countword((char *)s, c) + 1));
+	if (!str_list)
 		return (NULL);
-	list_str = ft_getlist(list_str, (char *)s, c, 0);
-	return (list_str);
+	while (s[count] != '\0')
+	{
+		if (s[count] != c)
+		{
+			start = count;
+			while (s[count] != c)
+				count++;
+			str_list[index++] = ft_substr(s, start, count-- - start);
+		}
+		count++;
+	}
+	str_list[index] = '\0';
+	//ft_free(str_list);
+	return (str_list);
 }
 
-int	main()
+int	main(void)
 {
-	char **str;
-	int	count;
-	
-	count = 0;
-	str = ft_split("oooo      \tHello World,,,, you you ooooo", 'o');
 
-	printf("1\t%s\n", str[0]); 
-	return (0);
+        char **tab = ft_split("  hello world  42  ", ' ');
+
+        printf("/ 0 / %s\n", tab[0]);
+        printf("/ 1 / %s\n", tab[1]);
+        printf("/ 2 / %s\n", tab[2]);
+
+        //ft_free(tab);
+        return (0);
 }
