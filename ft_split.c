@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/03 03:47:11 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/03 22:05:23 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ char	**ft_split(char const *s, char c)
 	return (str_list);
 }
 
-int	main(void)
+/*int	main(void)
 {
 
-        char **tab = ft_split("  hello world  42  ", ' ');
+        char **tab = ft_split("", 'o');
 
         printf("/ 0 / %s\n", tab[0]);
         printf("/ 1 / %s\n", tab[1]);
@@ -85,4 +85,4 @@ int	main(void)
 
         //ft_free(tab);
         return (0);
-}
+}*/
