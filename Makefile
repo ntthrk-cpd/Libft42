@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/03/04 11:21:19 by ncheepan          #+#    #+#              #
+#    Updated: 2023/03/04 11:23:00 by ncheepan         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 FLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 SRCS = ft_atoi.c \
@@ -40,16 +52,16 @@ OBJS = $(SRCS: .c = .o)
 all = $(NAME)
 
 %o: %c
-	gcc $(FLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
+	@ar -rcs $(NAME) $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
