@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 10:21:24 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/22 23:32:18 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 18:50:12 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	len_s1;
 
 	len_s1 = ft_strlen(s1);
-	str_trim = (unsigned char *)malloc(len_s1);
+	str_trim = (char *)malloc(len_s1);
 	if (!*str_trim)
 	{
 		str_trim = set_front((char *)s1);

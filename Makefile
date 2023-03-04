@@ -6,10 +6,11 @@
 #    By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 11:21:19 by ncheepan          #+#    #+#              #
-#    Updated: 2023/03/04 11:23:00 by ncheepan         ###   ########.fr        #
+#    Updated: 2023/03/04 18:09:48 by ncheepan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC = gcc
 FLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 SRCS = ft_atoi.c \
@@ -45,23 +46,23 @@ ft_strrchr.c \
 ft_strtrim.c \
 ft_substr.c \
 ft_tolower.c \
-ft_toupper.c \
+ft_toupper.c 
 
-OBJS = $(SRCS: .c = .o)
+OBJS = $(SRCS:.c=.o)
 
-all = $(NAME)
+all: $(NAME)
 
-%o: %c
-	@gcc $(FLAGS) -c $< -o $@
+%.o: %.c libft.h
+	$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@ar -rcs $(NAME) $(OBJS)
+	ar -crs $(NAME) $(OBJS)
 
 clean:
-	@rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:37:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/03 21:50:12 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:04:47 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_list	*next;
 }	t_list;
 

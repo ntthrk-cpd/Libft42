@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 22:49:00 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/20 13:56:10 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 18:42:59 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	count_i;
-	int	count_j;
+	size_t	count_i;
+	size_t	count_j;
 
 	count_i = 0;
 	count_j = 0;

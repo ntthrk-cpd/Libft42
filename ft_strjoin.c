@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 20:21:18 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/21 10:17:39 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 18:39:40 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*str_join;
-	size_t			len_s1;
-	size_t			len_s2;
+	char	*str_join;
+	size_t	len_s1;
+	size_t	len_s2;
 
 	len_s1 = ft_strlen(s1);
 	len_s2 = ft_strlen(s2);

@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:36:41 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/16 20:27:46 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 18:56:47 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strchr(const char *str, int c)
 {
+	int	index;
+
+	index = 0;
 	while (c > 127)
 		c -= 128;
-	while (*str)
+	while (str[index] != '\0')
 	{
-		if (*str == c)
-			return ((char *)str);
-		*str++;
+		if (str[index] == c)
+			return ((char *)(str + index));
+		index++;
 	}
 	if (c == '\0')
 		return ((char *)str);

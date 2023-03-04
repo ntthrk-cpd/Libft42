@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:42:40 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/17 15:07:46 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 18:22:40 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*char_str;
+	int		count;
 
 	char_str = (char *)s;
+	count = 0;
 	while (n--)
 	{
-		if (*char_str == (char)c)
-			return ((void *)char_str);
-		*char_str++;
+		if (char_str[count] == (char)c)
+			return ((void *)(char_str + count));
+		count++;
 	}
 	return (NULL);
 }

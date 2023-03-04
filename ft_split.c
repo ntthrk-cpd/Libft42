@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/03 22:05:23 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:05:24 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,20 @@ int	ft_countword(char *s, char c)
 {
 	int	count;
 	int	boolean;
+	int	index;
 
 	count = 0;
-	while (*s != '\0')
+	index = 0;
+	while (s[index] != '\0')
 	{
-		if (*s != c && boolean == 0)
+		if (s[index] != c && boolean == 0)
 		{
 			count++;
 			boolean = 1;
 		}
-		else if (*s == c)
+		else if (s[index] == c)
 			boolean = 0;
-		*s++;
+		index++;
 	}
 	return (count);
 }
@@ -70,7 +72,6 @@ char	**ft_split(char const *s, char c)
 		count++;
 	}
 	str_list[index] = '\0';
-	//ft_free(str_list);
 	return (str_list);
 }
 
