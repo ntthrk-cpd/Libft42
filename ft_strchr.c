@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:36:41 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/04 18:56:47 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/05 13:35:50 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,21 @@ char	*ft_strchr(const char *str, int c)
 		if (str[index] == c)
 			return ((char *)(str + index));
 		index++;
-	}
+	} 
 	if (c == '\0')
 		return ((char *)str);
 	return (NULL);
 }
+
+/* not complet.
+int main () {
+   char str[] = "Hello world  Welcome";
+   char ch = ' ';
+   char *ret;
+
+   ret = strchr(str, ch);
+
+   printf("String after |%c| is - |%s|\n", ch, ret);
+   
+   return(0);
+}*/

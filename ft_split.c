@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/04 19:05:24 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/05 11:17:01 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,11 @@ char	**ft_split(char const *s, char c)
 		}
 		count++;
 	}
-	str_list[index] = '\0';
+	str_list[index] = 0;
 	return (str_list);
 }
 
-/*int	main(void)
+int	main(void)
 {
 
         char **tab = ft_split("", 'o');
@@ -86,4 +86,4 @@ char	**ft_split(char const *s, char c)
 
         //ft_free(tab);
         return (0);
-}*/
+}
