@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 12:37:18 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/25 20:08:38 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:14:52 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	count = 0;
 	if (size == 0)
 		return (str_len);
-	while (src[count] != '\0' || count < (size - 1))
+	while (src[count] != '\0' && count < (size - 1))
 	{
 		dst[count] = src[count];
 		count++;
