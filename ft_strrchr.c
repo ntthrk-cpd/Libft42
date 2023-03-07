@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:32:14 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/04 19:06:37 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 18:02:43 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int	index;
+	int index;
 
-	index = 0;
-	while (c > 127)
+	index = ft_strlen(str);
+	while (index > -1)
 	{
-		c -= 128;
-		c++;
+		if (str[index]  == (unsigned char)c)
+			return ((char *)str + index);
+		index--;
 	}
-	while (str[index] != '\0')
-		index++;
-	while (str[--index] != c)
-	{
-		if (str[index] == c)
-			return ((char *)(str + index));
-	}
-	if (c == '\0')
-		return ((char *)str);
 	return (NULL);
 }
+/*
+int main () {
+   char str[] = "tripouillte";
+   int ch = 't';
+   char *ret;
+
+   ret = strchr(str, ch);
+
+   printf("String after |%c| is - |%s|\n", ch, ret);
+
+   return(0);
+}*/
