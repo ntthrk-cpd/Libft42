@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:06:46 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 12:54:49 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:01:53 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int ch)
 {
-	if (ch >= 32 && ch <= 127)
+	if (ch > 31 && ch < 127)
 		return (1);
 	return (0);
 }
@@ -25,7 +25,7 @@ int	ft_isprint(int ch)
 int main () {
    int var1 = 31;
    int var2 = 32;
-   int var3 = 128;
+   int var3 = 126;
    int var4 = 127;
    
 	printf("%d\t%d\t%d\t%d\n",var1, var2, var3, var4 );
