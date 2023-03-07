@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 06:29:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 14:40:46 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 14:55:20 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	char_dest = (char *)dest;
 	char_src = (char *)src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	while (n--)
 		*char_dest++ = *char_src++;
 	return (dest);
