@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:20:48 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 15:51:42 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:38:50 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,13 @@ int	ft_check_boo(int n)
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	unsigned char	*str1_ch;
-	unsigned char	*str2_ch;
+	char	*str1_ch;
+	char	*str2_ch;
 
-	str1_ch = (unsigned char *)str1;
-	str2_ch = (unsigned char *)str2;
+	str1_ch = (char *)str1;
+	str2_ch = (char *)str2;
 	if (!n)
 		return (0);
-	if (*str2_ch == '\0' || *str1_ch == '\0')
-		return (-1);
 	while (--n && *str1_ch == *str2_ch)
 	{
 		str1_ch++;

@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:37:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/04 19:04:47 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 13:14:05 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		ft_isprint(int ch);
 int		ft_isalnum(int ch);
 int		ft_isalpha(int ch);
 int		ft_isascii(int ch);
