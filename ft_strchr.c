@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:36:41 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 13:35:50 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:27:27 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,13 @@ char	*ft_strchr(const char *str, int c)
 		index++;
 	} 
 	if (c == '\0')
-		return ((char *)str);
+		return ((char *)str + index);
 	return (NULL);
 }
-
-/* not complet.
+/*
 int main () {
    char str[] = "Hello world  Welcome";
-   char ch = ' ';
+   int ch = 0;
    char *ret;
 
    ret = strchr(str, ch);
