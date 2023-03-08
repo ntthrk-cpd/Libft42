@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 13:02:44 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/07 15:50:40 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/08 09:24:49 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	index = -1;	
 	char_dest = (char *)dest;
 	char_src = (char *)src;
-	if (dest == NULL & src == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	while (++index < n)
 		char_dest[index] = char_src[index];
