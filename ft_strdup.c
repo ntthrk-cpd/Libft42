@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 16:14:51 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/20 16:59:05 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:23:57 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *s1)
 
 	count = 0;
 	size_ch = ft_strlen(s1);
-	s2 = (char *)malloc(size_ch);
+	s2 = (char *)malloc(sizeof(char) * (size_ch + 1));
 	if (!s2)
 		return (NULL);
 	while (s1[count] != '\0')
@@ -28,5 +28,6 @@ char	*ft_strdup(const char *s1)
 		s2[count] = s1[count];
 		count++;
 	}
+	s2[count] = '\0';
 	return (s2);
 }
