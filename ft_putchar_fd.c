@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:07:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/25 19:11:32 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/13 01:28:37 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	if (!c || !fd)
-		return ;
 	write(fd, &c, 1);
 }
