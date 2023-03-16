@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 06:29:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/07 14:55:20 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:22:13 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*char_dest++ = *char_src++;
 	return (dest);
 }
-/* not complet. [crash]: your memcpy does not behave well with NULL as both params with size
+/* 
 #include <stdio.h>
 #include <string.h>
 

@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:35:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/13 09:13:00 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/17 02:45:30 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 		return (dest_len + src_len);
 }
-/*#include <string.h>
+/*
+#include <string.h>
 
 int iTest = 1;
 int main(void)
@@ -77,11 +78,60 @@ int main(void)
         memset(dest, 0, 30);
         printf("/ 17 / check(\t%ld\t%s\n",ft_strlcat(dest, "123", 0), dest);	
 	printf("\n-----------------------------------------------\n");
-        dest[10] = 'a';
-        printf("/ 18 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 1), dest);
-       	memset(dest, 'r', 15);
-        printf("/ 19 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
+	int	arg;
+	
+	arg = 0;
+        while (++arg < 10)
+        {
+        	memset(dest, 0, 15);
+        	memset(dest, 'r', 6);
+		if (arg == 1)
+        	{
+        	        dest[11] = 'a';
+        	        printf("/ 1 / \t%ld\t%s\n", ft_strlcat(dest, "lorem", 15), dest);
+        	}
+        	else if (arg == 2)
+        	{
+                	printf("/ 2 / \t%ld\t%s\n", ft_strlcat(dest, "", 15), dest);
+        	}
+		else if (arg == 3)
+        	{
+        	        dest[0] = '\0';
+                	dest[11] = 'a';
+                	printf("/ 3 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum", 15), dest);
+        	}
+        	else if (arg == 4)
+        	{
+        	        dest[14] = 'a';
+        	        printf("/ 4 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 15), dest);
 
+        	}
+        	else if (arg == 5)
+        	{
+        	        dest[10] = 'a';
+        	        printf("/ 5 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 0), dest);
+        	}
+        	else if (arg == 6)
+        	{
+        	        dest[10] = 'a';
+        	        printf("/ 6 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 1), dest);
+        	}
+        	else if (arg == 7)
+        	{
+        	        memset(dest, 'r', 15);
+        	        printf("/ 7 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
+        	}
+        	else if (arg == 8)
+        	{
+        	        dest[10] = 'a';
+        	        printf("/ 8 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 6), dest);
+        	}
+        	else if (arg == 9)
+        	{
+        	        memset(dest, 'r', 14);
+        	        printf("/ 9 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 15), dest);
+        	}
+	}
 return (0);
 }
 */

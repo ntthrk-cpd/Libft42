@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:32:14 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/07 18:02:43 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/08 16:24:02 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strrchr(const char *str, int c)
 {
-	int index;
+	int	index;
 
 	index = ft_strlen(str);
 	while (index > -1)
 	{
-		if (str[index]  == (unsigned char)c)
+		if (str[index] == (unsigned char)c)
 			return ((char *)str + index);
 		index--;
 	}
