@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 21:20:27 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/13 12:20:11 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/18 11:33:46 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	while (i < n)
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
+		
 		if (s1[i] != s2[i])
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
@@ -56,7 +57,9 @@ int	main()
 	printf("/ 8 / check( 0\t%d\n",ft_strncmp("abcdefgh", "abcdwxyz", 4));
 	printf("/ 9 / check( 0\t%d\n",ft_strncmp("zyxbcdefgh", "abcdwxyz", 0));
 	printf("/ 10 / check( 0\t%d\n",ft_strncmp("abcdefgh", "", 0));
-	printf("/ 11 / check( 1\t%d\n",ft_strncmp("test\200", "test\0", 6));
+	printf("/ 11ft / check( 1\t%d\n",ft_strncmp("test\200", "test\0", 6));
 	printf("/ 11 / check( 1\t%d\n", strncmp("test\200", "test\0", 6));
+	printf("/ 12ft / check( \t%d\n", ft_strncmp("\0", "\0", 0));
+	printf("/ 12 / check( \t%d\n", strncmp("\0", "\0", 0));
 	return (0);
 }*/
