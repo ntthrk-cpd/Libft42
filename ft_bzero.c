@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:52:57 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/20 16:13:19 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/17 23:26:00 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ void	ft_bzero(void *s, size_t n)
 
 	str_char = (char *)s;
 	while (n-- > 0)
-		str_char[n] = 0;
+		str_char[n] = '\0';
 }

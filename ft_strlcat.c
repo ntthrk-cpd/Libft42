@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:35:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/17 02:45:30 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/17 23:05:38 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 }
 /*
 #include <string.h>
+       #include <string.h>
+       #include <time.h>
+       #include <stdio.h>
 
 int iTest = 1;
 int main(void)
@@ -119,7 +122,7 @@ int main(void)
         	else if (arg == 7)
         	{
         	        memset(dest, 'r', 15);
-        	        printf("/ 7 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
+        	        printf("/ 7 / \t%d\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
         	}
         	else if (arg == 8)
         	{
