@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 11:17:01 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:59:56 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	str_list[index] = 0;
 	return (str_list);
 }
-
+/*
 int	main(void)
 {
 
@@ -86,4 +86,4 @@ int	main(void)
 
         //ft_free(tab);
         return (0);
-}
+}*/
