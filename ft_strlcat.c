@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:35:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/17 23:05:38 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:12:20 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	count;
 
 	count = 0;
-	dest_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
+	if ((!dst && dstsize == 0) || dstsize == 0)
+		return (src_len);
+	dest_len = ft_strlen(dst);
 	if (!src)
 		return (dest_len);
-	if (dstsize == 0)
-		return (src_len);
 	while ((dest_len + count) < (dstsize - 1) && src[count] != '\0')
 	{
 		dst[dest_len + count] = src[count];
@@ -36,8 +36,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	else
 		return (dest_len + src_len);
 }
-/*
-#include <string.h>
+/*#include <string.h>
        #include <string.h>
        #include <time.h>
        #include <stdio.h>
@@ -80,6 +79,8 @@ int main(void)
         printf("/ 16 / check(\t%ld\t%s\n",ft_strlcat(dest, "123", 4), dest);
         memset(dest, 0, 30);
         printf("/ 17 / check(\t%ld\t%s\n",ft_strlcat(dest, "123", 0), dest);	
+	printf("/ 18 / ftnull \t%ld\t%s\n", ft_strlcat(NULL, "123", 0), dest);
+	printf("/ 18 / null \t%ld\t%s\n", strlcat(NULL, "123", 0), dest);
 	printf("\n-----------------------------------------------\n");
 	int	arg;
 	
@@ -122,7 +123,7 @@ int main(void)
         	else if (arg == 7)
         	{
         	        memset(dest, 'r', 15);
-        	        printf("/ 7 / \t%d\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
+        	        printf("/ 7 / \t%ld\t%s\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5), dest);
         	}
         	else if (arg == 8)
         	{
