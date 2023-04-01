@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 19:13:18 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/02/25 19:22:24 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/03/30 18:07:34 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (!s || !fd)
+	if (!s)
 		return ;
 	write(fd, s, ft_strlen(s));
 }
