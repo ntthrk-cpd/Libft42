@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:18:49 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/05 13:50:09 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:47:18 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *str, int c, size_t n)
 	str_char = (char *)str;
 	while (n-- > 0)
 		str_char[n] = c;
-	return ((void *)str_char);
+	return (str);
 }
 /*#include <stdio.h>
 #include <string.h>
