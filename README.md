@@ -4,7 +4,7 @@ LIBFT Project ให้สร้าง library C ขึ้นมาเพื่�
 ## Part 1 - Libc functions
 
 **#include <ctype.h>**
-> ```
+>
 int ft_isalpha(int c);
 ```
 DESCRIPTION		: ตรวจสอบว่าเป็น alphabetic character; ในมาตรฐานภาษา C ([a-z], [A-Z])
