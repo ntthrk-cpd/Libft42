@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:05:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/05 14:50:16 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:04:55 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
         s_len = ft_strlen(s);
         if  (start > s_len || len == 0)
                 return (ft_strdup(""));
+	if (start + len > s_len)
+		len = s_len - start;
         sub_str = (char *)malloc(sizeof(char) * (len + 1));
-        if (!sub_str)
+	if (!sub_str)
                 return (NULL);
         while (count < len)
                 sub_str[count++] = s[start++];
