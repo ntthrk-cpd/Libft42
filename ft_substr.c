@@ -6,35 +6,33 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 17:05:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/05 15:04:55 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/06 13:43:21 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-        char                    *sub_str;
-        unsigned int    s_len;
-        unsigned int    count;
+	char			*sub_str;
+	unsigned int	s_len;
+	unsigned int	count;
 
-        //printf("\n---------------------\n");
-        count = 0;
-        if (!s)
-                return (NULL);
-        s_len = ft_strlen(s);
-        if  (start > s_len || len == 0)
-                return (ft_strdup(""));
+	count = 0;
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if (start > s_len || len == 0)
+		return (ft_strdup(""));
 	if (start + len > s_len)
 		len = s_len - start;
-        sub_str = (char *)malloc(sizeof(char) * (len + 1));
+	sub_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!sub_str)
-                return (NULL);
-        while (count < len)
-                sub_str[count++] = s[start++];
-        sub_str[count] = '\0';
-        //printf("\n%s\n>>>%ld\n\n", sub_str, ft_strlen(sub_str));
-        return (sub_str);
+		return (NULL);
+	while (count < len)
+		sub_str[count++] = s[start++];
+	sub_str[count] = '\0';
+	return (sub_str);
 }
 /*
 int	main()

@@ -6,33 +6,21 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/07 19:59:56 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/06 19:00:12 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free(char **str_list)
-{
-	int	i;
-
-	i = 0;
-	while (str_list[i] != NULL)
-	{
-		free(str_list[i]);
-		i++;
-	}
-	free(str_list);
-}
-
 int	ft_countword(char *s, char c)
 {
 	int	count;
-	int	boolean;
 	int	index;
+	int	boolean;
 
 	count = 0;
 	index = 0;
+	boolean = 0;
 	while (s[index] != '\0')
 	{
 		if (s[index] != c && boolean == 0)
@@ -50,40 +38,32 @@ int	ft_countword(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str_list;
-	int		count;
-	int		start;
-	int		index;
-
-	count = 0;
-	start = 0;
-	index = 0;
-	str_list = (char **)malloc(sizeof(char) * (ft_countword((char *)s, c) + 1));
-	if (!str_list)
+	size_t	count_word;
+	size_t	pos;
+	
+	if (!s)
 		return (NULL);
-	while (s[count] != '\0')
+	str_list = 0;
+	pos = 0;
+	count_word = ft_countword((char *)s, c);
+	printf("\ncount : %ld\n", count_word);
+	str_list = (char **)malloc(sizeof(char *) * (count_word + 1));
+	if (str_list)
 	{
-		if (s[count] != c)
-		{
-			start = count;
-			while (s[count] != c)
-				count++;
-			str_list[index++] = ft_substr(s, start, count-- - start);
-		}
-		count++;
+			str_list[pos] = ft_getlist();
 	}
-	str_list[index] = 0;
 	return (str_list);
 }
-/*
+
 int	main(void)
 {
+	int i = 0;
+        char **tab = ft_split("Hello World Wonderful food\t", 'o');
 
-        char **tab = ft_split("", 'o');
-
-        printf("/ 0 / %s\n", tab[0]);
-        printf("/ 1 / %s\n", tab[1]);
-        printf("/ 2 / %s\n", tab[2]);
-
-        //ft_free(tab);
-        return (0);
-}*/
+	while (*tab[i] != '\0')
+        {
+		printf("/ %d / %s\n", i, tab[i]);
+        	i++;
+	}
+	return (0);
+}
