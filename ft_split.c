@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/08 10:25:51 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:56:46 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ void	ft_memfree(char **str_list)
 
 	i = 0;
 	while (str_list[i])
-		free(str_list[i++]);
-	free(str_list);
-	return (NULL);
+	{	
+		free(*str_list[i]);
+		i++;
+	}
+	free((void *)str_list);
+	return (0);
 }
 
 size_t	ft_countchar(char *s, char c)
