@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 00:45:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/29 22:31:17 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:39:55 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_count_n(int n)
 	int	count;
 
 	count = 0;
+	if (n == 0)
+		count++;
 	if (n < 0)
 		count++;
 	while (n != 0)
@@ -32,8 +34,6 @@ char	*ft_tochar(char *str, int n, int len)
 	int	negative;
 
 	negative = 0;
-	if (n == 0)
-		return ("0");
 	str[len--] = '\0';
 	if (n < 0)
 	{
@@ -61,7 +61,10 @@ char	*ft_itoa(int n)
 	int		len;
 
 	len = ft_count_n(n);
+	str_num = 0;
 	str_num = malloc(sizeof(char) * (len + 1));
+	if (!str_num)
+		return (NULL);
 	str_num = ft_tochar(str_num, n, len);
 	return (str_num);
 }
@@ -69,7 +72,7 @@ char	*ft_itoa(int n)
 int	main()
 {
 		char *res = ft_itoa(0);
-	printf("0\t: %s\n", res);
+	printf("0\t: %s\t: %ld\n", res, ft_strlen(res));
 
 	res = ft_itoa(9);
 	printf("9\t: %s\n", res);
@@ -97,7 +100,8 @@ int	main()
 
 	res = ft_itoa(2147483647);
 	printf("2147483647\t: %s\n", res);
-        
+ 
+	res = ft_itoa(0);
+	printf("0\t: %s\n", res);       
 	return 0;
-}
-*/
+}*/
