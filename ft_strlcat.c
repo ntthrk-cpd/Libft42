@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:35:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/10 22:39:21 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:16:55 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dest_len + count] = '\0';
 	if (dstsize < dest_len)
 		return (src_len + dstsize);
-	else
-		return (dest_len + src_len);
+	return (dest_len + src_len);
 }
