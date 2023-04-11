@@ -6,14 +6,14 @@
 #    By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 11:21:19 by ncheepan          #+#    #+#              #
-#    Updated: 2023/04/04 14:28:42 by ncheepan         ###   ########.fr        #
+#    Updated: 2023/04/10 22:43:18 by ncheepan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 FLAGS = -Wall -Werror -Wextra
 RM = rm -rf
-NAME = libft.a
+NAME = ./libft.a
 SRCS = ft_atoi.c \
 ft_bzero.c \
 ft_calloc.c \
@@ -51,20 +51,20 @@ ft_toupper.c
 
 OBJS = $(SRCS:.c=.o)
 
-all: $(NAME)
+all : $(NAME)
 
-%.o: %.c
+%.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME) : $(OBJS)
 	ar -crs $(NAME) $(OBJS)
 
-clean:
+clean :
 	$(RM) $(OBJS)
 
-fclean: clean
+fclean : clean
 	$(RM) $(NAME)
 
-re: fclean all
+re : fclean all
 
-.PHONY: all clean fclean re
+.PHONY : all clean fclean re

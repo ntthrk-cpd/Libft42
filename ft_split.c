@@ -5,68 +5,60 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 20:37:45 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/08 17:56:46 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/04/10 03:16:27 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/04/11 09:01:50 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memfree(char **str_list)
+char	*ft_getstring(char const *s1, char c, int i)
 {
-	size_t	i;
+	char	*s2;
+	size_t	start;
+	size_t	len;
 
-	i = 0;
-	while (str_list[i])
-	{	
-		free(*str_list[i]);
-		i++;
-	}
-	free((void *)str_list);
-	return (0);
-}
-
-size_t	ft_countchar(char *s, char c)
-{
-	size_t	count;
-
-	count++;
-	while (*s++ != c && s)
-		count++;
-	return(count);
-}
-
-char **ft_getlist(char **str_list, char *s, char c, size_t pos)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (s[i] == c)
+	s2 = 0;
+	start = 0;
+	while (i-- >= 0)
 	{
-		while(s[i] == c)
-			i++;
+		while (s1[start] != c && start != 0)
+			start++;
+		while (s1[start] == c)
+			start++;
 	}
-	else if (s[i] != c)
-	{	
-		if(!(str_list[pos] = (char *)malloc(sizeof(char) * ft_countchar(s, c) + 1)
-			return (NULL);
-		while (s[i] != c && s[i])
-			str_list[pos][j++] = s[i++];
-		str_list[pos][j] == '\0';	
-	}
-	if (s[i]);
-		return (ft_getlist(str_list, s + i, ++pos));	
-	str_list[++pos] = 0;
-	return (str_list);
+	len = start;
+	while (s1[len] != c && s1[len] != '\0')
+		len++;
+	s2 = malloc((len - start + 1) * sizeof(char));
+	if (!s2)
+		return (NULL);
+	i = 0;
+	while (start < len)
+		s2[i++] = s1[start++];
+	s2[i] = '\0';
+	return (s2);
 }
 
-size_t	ft_countword(char *s, char c)
+static void	*ft_memfree(char **str_list, int i)
 {
-	size_t	count;
-	size_t	index;
-	size_t	boolean;
+	int	j;
+
+	j = 0;
+	while (j < i)
+	{	
+		free(str_list[j]);
+		j++;
+	}
+	free(*str_list);
+	return (NULL);
+}
+
+unsigned int	ft_count_word(char const *s, char c)
+{
+	unsigned int	count;
+	unsigned int	index;
+	unsigned int	boolean;
 
 	count = 0;
 	index = 0;
@@ -88,33 +80,23 @@ size_t	ft_countword(char *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**str_list;
-	size_t	count_word;
-	size_t	pos;
-	
+	int		count_word;
+	int		i;
+
 	if (!s)
 		return (NULL);
-	str_list = 0;
-	pos = 0;
-	count_word = ft_countword((char *)s, c);
-	printf("\ncount : %ld\n", count_word);
-	if(!(str_list = (char **)malloc(sizeof(char *) * (count_word + 1))))
-		return (ft_memfree(str_list));
-	if (str_list)
+	i = 0;
+	count_word = ft_count_word(s, c);
+	str_list = (char **)malloc(sizeof(char *) * (count_word + 1));
+	if (!str_list)
+		return (NULL);
+	while (i < count_word)
 	{
-		str_list = ft_getlist(str_list, s, c, pos);
+		str_list[i] = ft_getstring(s, c, i);
+		if (str_list[i] == NULL)
+			return (ft_memfree(str_list, i));
+		i++;
 	}
+	str_list[i] = 0;
 	return (str_list);
 }
-/*
-int	main(void)
-{
-	int i = 0;
-        char **tab = ft_split("Hello World Wonderful food\t", 'o');
-
-	while (*tab[i] != '\0')
-        {
-		printf("/ %d / %s\n", i, tab[i]);
-        	i++;
-	}
-	return (0);
-}*/
