@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 03:16:27 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/11 09:01:50 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:14:54 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ char	*ft_getstring(char const *s1, char c, int i)
 	s2 = 0;
 	start = 0;
 	while (i-- >= 0)
-	{
-		while (s1[start] != c && start != 0)
-			start++;
+	{	
 		while (s1[start] == c)
+			start++;
+		while (s1[start] != c && i >= 0)
 			start++;
 	}
 	len = start;
 	while (s1[len] != c && s1[len] != '\0')
 		len++;
-	s2 = malloc((len - start + 1) * sizeof(char));
+	s2 = (char *)malloc((len - start + 1) * sizeof(char));
 	if (!s2)
 		return (NULL);
 	i = 0;
