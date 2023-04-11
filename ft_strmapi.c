@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 13:13:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/10 22:34:21 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/11 12:01:53 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		len;
 	char	*str;
 
+	if (!s || !f)
+		return (NULL);
 	index = 0;
 	len = ft_strlen(s);
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
-		return (NULL);
-	if (!s || !f || !str)
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
 		return (NULL);
 	while (index < len)
 	{
