@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 18:33:09 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/04 18:37:50 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/12 09:34:01 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	index = 0;
 	while (s[index] != '\0')
 	{
-		f(index, &s[index]);
+		f(index, s + index);
 		index++;
 	}
 }
