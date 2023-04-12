@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/25 18:33:09 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/12 14:51:27 by ncheepan         ###   ########.fr       */
+/*   Created: 2023/04/12 13:38:46 by ncheepan          #+#    #+#             */
+/*   Updated: 2023/04/12 17:21:43 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
-{
-	int	index;
+#include "libft.h"
 
-	if (!s || !f)
-		return ;
-	index = 0;
-	while (s[index] != '\0')
+t_list	*ft_lstnew(void *content)
+{
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (new_node != NULL)
 	{
-		f(index, s + index);
-		index++;
+		new_node->content = content;
+		new_node->next = NULL;
 	}
+	return (new_node);
 }
