@@ -1,5 +1,5 @@
 # LIBFT
-<!--This project is about coding a C library -->
+This project is about coding a C library
 
 ## TESTER
 - https://github.com/alelievr/libft-unit-test
