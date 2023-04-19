@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 14:32:14 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/04 09:53:02 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/18 23:20:21 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,3 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (NULL);
 }
-/*
-int main () {
-   char str[] = "tripouillte";
-   int ch = 't';
-   char *ret;
-
-   ret = strchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-   return(0);
-}*/

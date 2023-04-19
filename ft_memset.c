@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:18:49 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/04 10:47:18 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/19 00:11:33 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,3 @@ void	*ft_memset(void *str, int c, size_t n)
 		str_char[n] = c;
 	return (str);
 }
-/*#include <stdio.h>
-#include <string.h>
-
-int main () {
-   char str[50];
-
-   strcpy(str,"This is string.h library function");
-   puts(str);
-
-   ft_memset(str,'A',7);
-   puts(str);
-   
-   return(0);
-}*/

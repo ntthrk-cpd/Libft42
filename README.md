@@ -162,3 +162,71 @@ DESCRIPTION	:  เปรียบเทียบ s1 และ s2 จำนวน
 RETURN VALUE	: <br/>
 	ส่งค่ากลับเป็นผลต่างของ byte คู่แรกที่แตกต่างกันระหว่าง s1 และ s2 <br/>
 	ถ้า n = 0 คืนค่าเป็น 0<br/>
+
+```c
+size_t strlcpy(char *dst, const char *src, size_t size);
+```
+
+PARAMETERS	:<br/>
+	dst = string ปลายทาง<br/>
+	src = string ต้นทาง<br/>
+	size = ขนาดที่ต้อง copy<br/>
+RETURN VALUE	: ขนาดของ src ที่ copy มา dst ถ้า src เป็น NULL หรือ size เป็น 0 คืนค่า 0 <br/>
+DESCRIPTION	:  copy src ไป dst จำนวน size-1 โดยปิดท้าย string ด้วย '\0'<br/>
+
+```c
+size_t strlcat(char *dst, const char *src, size_t size);
+```
+
+PARAMETERS      :<br/>
+        dst = string ปลายทาง<br/>
+        src = string ต้นทาง<br/>
+        size = ขนาดที่ต้องการ cat<br/>
+RETURN VALUE    : คืนค่าผลรวมขนาด src + dst หากต่อ String สมบูรณ์ หรือขนาด size + src ถ้า size มากกว่าขนาด dst<br/>
+DESCRIPTION     :  เชื่อม src ต่อท้าย dst จำนวนน้อยกว่าหรือเท่ากับ size-1 โดยลงท้ายสตริงด้วย '\0'<br/>
+
+```c
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+```
+
+PARAMETERS	:<br/>
+	haystack = String สำหรับค้นหา<br/>
+	needle	= String ที่ต้องการค้น<br/>
+	len	= ขนาดที่ต้องการค้นหา<br/>
+DESCRIPSION	: ค้นหา needle ใน haystack ตามขนาด len
+RETURN VALUE	:<br/>
+	หาก needle เป็น '' คืนค่า haystack<br/>
+	หากพบ needle โดยเช็คทางขนาด len คืนค่า haystack ตำแหน่งที่พบ แต่ถ้าไม่พบคืนค่า NULL<br/>
+
+```c
+#include <stdlib.h>
+```
+
+```c
+int atoi(const char *nptr);
+```
+
+PARAMETERS	: nptr = pointer strint<br/>
+DESCRIPTION	: แปลงค่า nptr เป็น int<br/>
+RETRUN		: int<br/>
+
+```c
+void *calloc(size_t nmemb, size_t size);
+```
+
+PARAMETERS	: <br/>
+	nmemb	= จำนวนตัวแปรที่ต้องการจอง<br/>
+	size	= ขนาดของตัวแปรที่ต้องการจอง<br/>
+DESCRIPTION	: จองหน่วยความจำตามขนาด โดยที่แต่ละช่องที่จองแทนตัว '\0'<br/>
+RETURN		: คืนค่าพื้นที่ทำการจอง<br/>
+EXTERNAL FUNTS.	: malloc()
+
+```c
+char	*ft_strdup(const char *s1)
+```
+
+PARAMETERS	: s1 = string ที่ต้องการ copy<br/>
+DESCRIPTION	: จัดสรรพื้นที่แล้วคัดลอก s1 คืนค่า pointer string ที่คัดลอก s1 ไว้<br/>
+RETURN		: s2 ที่จัดเก็บแล้ว<br/>
+EXTERNAL FUNTS.	: malloc()<br/>
+

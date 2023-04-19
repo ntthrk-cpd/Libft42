@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 06:29:05 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/03/08 16:22:13 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/19 00:25:52 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*char_dest++ = *char_src++;
 	return (dest);
 }
-/* 
-#include <stdio.h>
-#include <string.h>
-
-int main () {
-   const char src[50] = "ood";
-   char dest[50];	
-	size_t n = 10;
-
-   strcpy(dest, "uuuuu");
-   printf("Before memcpy dest = %s\n", dest);
-   memcpy(dest, src, n);
-   printf("1 After memcpy dest = %s\n", dest);
-   ft_memcpy(dest, src, n);
-   printf("2 After ft_memcpy dest = %s\n", dest);
-   return(0);
-}*/

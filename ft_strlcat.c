@@ -6,7 +6,7 @@
 /*   By: ncheepan <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 14:35:12 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/12 16:53:49 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/19 22:52:59 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[dest_len + count] = '\0';
 	return (dest_len + src_len);
 }
-/*
-int	main()
-{
-	char	*dest = 0;
-
-	if (!(dest = (char *)malloc(sizeof(char) * 1)))
-		return (0);
-	memset(dest, 'r', 15);
-	printf( "%ld\n", ft_strlcat(dest, "lorem ipsum dolor sit amet", 5));
-	printf("%s\n", dest);
-	free(dest);
-	return (0);
-}*/
