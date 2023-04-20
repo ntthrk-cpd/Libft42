@@ -6,7 +6,7 @@
 /*   By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 00:45:43 by ncheepan          #+#    #+#             */
-/*   Updated: 2023/04/12 14:55:13 by ncheepan         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:35:51 by ncheepan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,40 +68,3 @@ char	*ft_itoa(int n)
 	str_num = ft_tochar(str_num, n, len);
 	return (str_num);
 }
-/*
-int	main()
-{
-		char *res = ft_itoa(0);
-	printf("0\t: %s\t: %ld\n", res, ft_strlen(res));
-
-	res = ft_itoa(9);
-	printf("9\t: %s\n", res);
-
-	res = ft_itoa(-9);
-	printf("-9\t: %s\n", res);
-
-	res = ft_itoa(10);
-	printf("10\t: %s\n", res);
-
-	res = ft_itoa(-10);
-	printf("-10\t: %s\n", res);
-
-	res = ft_itoa(8124);
-	printf("8124\t: %s\n", res);
-
-	res = ft_itoa(-9874);
-	printf("-9874\t: %s\n", res);
-	
-	res = ft_itoa(543000);
-	printf("543000\t: %s\n", res);
-
-	res = ft_itoa(-2147483648LL);
-	printf("-2147483648LL\t: %s\n", res);
-
-	res = ft_itoa(2147483647);
-	printf("2147483647\t: %s\n", res);
- 
-	res = ft_itoa(0);
-	printf("0\t: %s\n", res);       
-	return 0;
-}*/
