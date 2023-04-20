@@ -6,16 +6,15 @@
 #    By: ncheepan <ncheepan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/04 11:21:19 by ncheepan          #+#    #+#              #
-#    Updated: 2023/04/15 15:05:15 by ncheepan         ###   ########.fr        #
+#    Updated: 2023/04/20 17:34:38 by ncheepan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra
 RM = rm -rf
-AR = ar -crs
+AR = ar -r
 NAME = libft.a
-INCLUDES = ./libft.h
 SRCS = ft_atoi.c \
 ft_bzero.c \
 ft_calloc.c \
@@ -51,8 +50,7 @@ ft_substr.c \
 ft_tolower.c \
 ft_toupper.c 
 
-SRC_BONUS = \
-ft_lstnew.c \
+SRC_BONUS = ft_lstnew.c \
 ft_lstadd_front.c \
 ft_lstsize.c \
 ft_lstlast.c \
@@ -68,14 +66,15 @@ OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 all : $(NAME)
 
+$(NAME) : $(OBJS)
+	$(AR) $@ $?
+
 %.o : %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME) : $(OBJS) $(OBJS_BONUS)
-	$(AR) $(NAME) $@ $^
+bonus : $(OBJS_BONUS)
+	$(AR) $(NAME) $?
 
-bonus : $(OBJS) $(OBJ_BONUS)
-	$(AR) $(NAME) $(NAME) $^
 clean :
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
